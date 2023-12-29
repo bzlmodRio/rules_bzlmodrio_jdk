@@ -1,7 +1,7 @@
 module(
-    name = "rules_bzlmodrio_jdk",
-    version = "{{group.jdk_version}}",
-    compatibility_level = 2024,
+    name = "{{group.repo_name}}",
+    version = "{{group.sanitized_version}}{{group.patch}}",
+    compatibility_level = {{group.year}},
 )
 
 {{bazel_dependencies.platforms.module_dep()}}

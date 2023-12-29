@@ -30,9 +30,11 @@ def get_toolchain_dependencies():
             self.jdk_version = jdk_version
             self.escaped_version = escaped_version
             self.underscore_version = underscore_version
+            self.jre_version = jre_version
             self.version = jdk_version
-            self.sanitized_version = jdk_version
+            self.sanitized_version = self.version.replace("+", "-")
             self.patch = ""
+            self.year = "2024"
 
     platforms = []
 
