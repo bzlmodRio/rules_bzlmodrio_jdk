@@ -53,6 +53,25 @@ def __setup_jdk_dependencies(mctx):
         strip_prefix = "jdk-25.0.2+10/Contents/Home",
     )
 
+    runtime_files = [
+        "concrt140.dll",
+        "msvcp140.dll",
+        "msvcp140_1.dll",
+        "msvcp140_2.dll",
+        "msvcp140_atomic_wait.dll",
+        "msvcp140_codecvt_ids.dll",
+        "vccorlib140.dll",
+        "vcruntime140.dll",
+        "vcruntime140_1.dll",
+        "vcruntime140_threads.dll",
+    ]
+
+    runtime_labels = [Label("@msvc_runtime2//:" + f) for f in runtime_files]
+    print(runtime_labels)
+    win_patch_cmds = ["cp ../msvc_runtime2++setup_msvc_deps+bazelrio_msvc_runtime/" + lbl.name + " bin/" + lbl.name for lbl in runtime_labels]
+    for x in win_patch_cmds:
+        print(x)
+
     remote_java_repository(
         name = "roboriojdk_windows",
         prefix = "roboriojdk",
@@ -64,6 +83,7 @@ def __setup_jdk_dependencies(mctx):
         sha256 = "06ac5f5444a1269dd11d11cbb7ab6ebaecedc60dc1caca82cdb56f29100b7b8c",
         urls = ["https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_x64_windows_hotspot_25.0.2_10.zip"],
         strip_prefix = "jdk-25.0.2+10",
+        patch_cmds = win_patch_cmds
     )
 
 def setup_legacy_setup_jdk_dependencies():
