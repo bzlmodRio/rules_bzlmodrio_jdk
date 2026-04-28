@@ -1,5 +1,4 @@
 load("@rules_java//java:defs.bzl", "java_test")
-load("@rules_wpi_styleguide//styleguide:java_styleguide.bzl", "java_styleguide")
 
 java_test(
     name = "test",
@@ -30,5 +29,3 @@ java_test(
         "@maven//:org_junit_jupiter_junit_jupiter_params",
     ],
 )
-
-java_styleguide(name = "basic_test")

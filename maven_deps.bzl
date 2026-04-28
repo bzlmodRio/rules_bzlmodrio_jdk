@@ -4,79 +4,66 @@ def __setup_jdk_dependencies(mctx):
     remote_java_repository(
         name = "roboriojdk_linux",
         prefix = "roboriojdk",
-        version = "17",
+        version = "25",
         target_compatible_with = [
             "@platforms//os:linux",
             "@platforms//cpu:x86_64",
         ],
-        sha256 = "9d4dd339bf7e6a9dcba8347661603b74c61ab2a5083ae67bf76da6285da8a778",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.12_7.tar.gz"],
-        strip_prefix = "jdk-17.0.12+7",
-    )
-
-    remote_java_repository(
-        name = "roboriojdk_linux_arm32",
-        prefix = "roboriojdk",
-        version = "17",
-        target_compatible_with = [
-            "@platforms//os:linux",
-            "@platforms//cpu:armv7",
-        ],
-        sha256 = "ce7873ebf40ed0eb1089941ead4d3af79a205b1264f3162860d26ae957572b74",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_arm_linux_hotspot_17.0.12_7.tar.gz"],
-        strip_prefix = "jdk-17.0.12+7",
+        sha256 = "987387933b64b9833846dee373b640440d3e1fd48a04804ec01a6dbf718e8ab8",
+        urls = ["https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_x64_linux_hotspot_25.0.2_10.tar.gz"],
+        strip_prefix = "jdk-25.0.2+10",
     )
 
     remote_java_repository(
         name = "roboriojdk_linux_arm64",
         prefix = "roboriojdk",
-        version = "17",
+        version = "25",
         target_compatible_with = [
             "@platforms//os:linux",
             "@platforms//cpu:arm64",
         ],
-        sha256 = "8257de06bf37f0c8f19f8d542e2ab5a4e17db3ca5f29d041bd0b02ab265db021",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.12_7.tar.gz"],
-        strip_prefix = "jdk-17.0.12+7",
+        sha256 = "a9d73e711d967dc44896d4f430f73a68fd33590dabc29a7f2fb9f593425b854c",
+        urls = ["https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_aarch64_linux_hotspot_25.0.2_10.tar.gz"],
+        strip_prefix = "jdk-25.0.2+10",
     )
 
     remote_java_repository(
         name = "roboriojdk_mac",
         prefix = "roboriojdk",
-        version = "17",
+        version = "25",
         target_compatible_with = [
             "@platforms//os:macos",
             "@platforms//cpu:x86_64",
         ],
-        sha256 = "d5230eeec88739aa7133e4c8635bbd4ab226708c12deaafa13cf26b02bc8e8c4",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_x64_mac_hotspot_17.0.12_7.tar.gz"],
-        strip_prefix = "jdk-17.0.12+7/Contents/Home",
+        sha256 = "7caddeb2d1d06a21487fdf55198349f122ba7b24bfc613b8923a42a133a92dc5",
+        urls = ["https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_x64_mac_hotspot_25.0.2_10.tar.gz"],
+        strip_prefix = "jdk-25.0.2+10/Contents/Home",
     )
 
     remote_java_repository(
         name = "roboriojdk_mac_arm64",
         prefix = "roboriojdk",
-        version = "17",
+        version = "25",
         target_compatible_with = [
             "@platforms//os:macos",
             "@platforms//cpu:aarch64",
         ],
-        sha256 = "d7910b1acaeb290c5c5da21811d2b2b8635f806612a2d6e8d1953b2f77580f78",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.12_7.tar.gz"],
-        strip_prefix = "jdk-17.0.12+7/Contents/Home",
+        sha256 = "74ff6e892924a49767c35eb61251b1969c03213819d51065d9b8f9e0238c4f97",
+        urls = ["https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.2_10.tar.gz"],
+        strip_prefix = "jdk-25.0.2+10/Contents/Home",
     )
 
     remote_java_repository(
         name = "roboriojdk_windows",
         prefix = "roboriojdk",
-        version = "17",
+        version = "25",
         target_compatible_with = [
             "@platforms//os:windows",
             # Assume JDK works for any CPU,
         ],
-        sha256 = "052049d687ebfda6a4032d54afcd0da6549a23bc2ed04cfaa509746eeacbae71",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.12%2B7/OpenJDK17U-jdk_x64_windows_hotspot_17.0.12_7.zip"],
-        strip_prefix = "jdk-17.0.12+7",
+        sha256 = "06ac5f5444a1269dd11d11cbb7ab6ebaecedc60dc1caca82cdb56f29100b7b8c",
+        urls = ["https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_x64_windows_hotspot_25.0.2_10.zip"],
+        strip_prefix = "jdk-25.0.2+10",
     )
 
 def setup_legacy_setup_jdk_dependencies():
@@ -84,7 +71,6 @@ def setup_legacy_setup_jdk_dependencies():
 
     REMOTE_JDK_REPOS = [
         "roboriojdk_linux",
-        "roboriojdk_linux_arm32",
         "roboriojdk_linux_arm64",
         "roboriojdk_mac",
         "roboriojdk_mac_arm64",
