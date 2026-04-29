@@ -1,0 +1,11 @@
+module(
+    name = "msvc_runtime",
+    version = "0",
+)
+
+
+setup_msvc_deps = use_extension("//:maven_deps.bzl", "setup_msvc_deps")
+use_repo(
+    setup_msvc_deps,
+    "bazelrio_msvc_runtime",
+)

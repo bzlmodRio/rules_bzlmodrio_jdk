@@ -7,10 +7,10 @@ module(
 bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "rules_java", version = "8.16.1")
 
-bazel_dep(name = "msvc_runtime2", version = "1")
+bazel_dep(name = "msvc_runtime", version = "1")
 local_path_override(
-    module_name = "msvc_runtime2",
-    path = "C:/Users/PJ/git/bzlmodrio/monorepo/libraries/bzlmodRio-msvc_runtime",
+    module_name = "msvc_runtime",
+    path = "bzlmodRio-msvc_runtime",
 )
 
 deps = use_extension("//:maven_deps.bzl", "deps")

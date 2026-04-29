@@ -66,11 +66,8 @@ def __setup_jdk_dependencies(mctx):
         "vcruntime140_threads.dll",
     ]
 
-    runtime_labels = [Label("@msvc_runtime2//:" + f) for f in runtime_files]
-    print(runtime_labels)
-    win_patch_cmds = ["cp ../msvc_runtime2++setup_msvc_deps+bazelrio_msvc_runtime/" + lbl.name + " bin/" + lbl.name for lbl in runtime_labels]
-    for x in win_patch_cmds:
-        print(x)
+    runtime_labels = [Label("@msvc_runtime//:" + f) for f in runtime_files]
+    win_patch_cmds = ["cp ../msvc_runtime++setup_msvc_deps+bazelrio_msvc_runtime/" + lbl.name + " bin/" + lbl.name for lbl in runtime_labels]
 
     remote_java_repository(
         name = "roboriojdk_windows",
